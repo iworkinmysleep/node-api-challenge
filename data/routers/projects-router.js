@@ -61,4 +61,21 @@ router.put("/:id", (req, res) => {
 		});
 });
 
+
+router.delete("/:id", (req, res) => {
+	Projects.remove(req.params.id)
+		.then((count) => {
+			if (count > 0) {
+				res.status(200).json({ message: "Project successfully removed." });
+			} else {
+				res.status(404).json({ message: "Project not found." });
+			}
+		})
+		.catch((err) => {
+			res
+				.status(500)
+				.json({ message: "There was an error removing the project.", err });
+		});
+});
+
 module.exports = router;

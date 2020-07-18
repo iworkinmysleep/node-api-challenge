@@ -37,12 +37,10 @@ router.post("/", (req, res) => {
 			res.status(201).json(action);
 		})
 		.catch((err) => {
-			res
-				.status(500)
-				.json({
-					message: "There was a problem adding the action to the database.",
-					err,
-				});
+			res.status(500).json({
+				message: "There was a problem adding the action to the database.",
+				err,
+			});
 		});
 });
 
@@ -60,6 +58,22 @@ router.put("/:id", (req, res) => {
 			res
 				.status(500)
 				.json({ message: "There was an error updating the action.", err });
+		});
+});
+
+router.delete("/:id", (req, res) => {
+	Actions.remove(req.params.id)
+		.then((count) => {
+			if (count > 0) {
+				res.status(200).json({ message: "Action successfully removed." });
+			} else {
+				res.status(404).json({ message: "Action not found." });
+			}
+		})
+		.catch((err) => {
+			res
+				.status(500)
+				.json({ message: "There was an error removing the action.", err });
 		});
 });
 

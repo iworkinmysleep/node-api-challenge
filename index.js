@@ -12,3 +12,23 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+const express = require('express');
+
+const actionsRouter = require('./data/routers/actions-router.js');
+const projectsRouter = require('./data/routers/projects-router.js');
+
+const server = express();
+
+server.use(express.json());
+server.use('/api/actions', actionsRouter);
+server.use('/api/projects', projectsRouter);
+
+server.get('/', (req, res) => {
+  res.send('<h2>Node Api Challenge</h2>');
+  
+})
+
+const PORT = 5000;
+server.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}`);
+})

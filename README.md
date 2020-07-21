@@ -39,15 +39,20 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
 - [ ] Mention two parts of Express that you learned about this week.
+1- Express Routing - Routing from Express allows us to break up our api into smaller parts for ease of functionality and much cleaner code.
+2- Express Middleware - Middleware functions can be set up to manipulate request and response objects. These can be customized.
 
 - [ ] Describe Middleware?
+Middleware can be thought of as an array of functions.  When a request and response object is given, it can be passed to the middleware that we create (or that already exists in Express) to handle the object. When one middleware function is completed on the object, the function passes the object to the next piece of middleware.  This process takes place until the object is ready to function as we see fit.
 
 - [ ] Describe a Resource?
+A resource in an api is the information or object that is useful to the client. For example, a Marvel api's resources could include an array of objects listing all of the Avengers and their powers.
 
 - [ ] What can the API return to help clients know if a request was successful?
+We can use status codes that return a json object.  Status code of 200 lets the client know that the request was successful.
 
 - [ ] How can we partition our application into sub-applications?
-
+We can use Express Router to break our api into sub apps.  Depending on what resource the client is after, we can create custom routes for that particular resource depending on the endpoint that is used.
 ## Minimum Viable Product
 
 - [ ] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.

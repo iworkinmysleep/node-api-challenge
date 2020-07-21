@@ -34,6 +34,8 @@ Follow these steps for completing your project.
 
 Commit your code regularly and use descriptive messages. This helps both you (in case you ever need to return to old code) and your Team Lead.
 
+
+
 ## Self-Study/Essay Questions
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
@@ -53,6 +55,9 @@ We can use status codes that return a json object.  Status code of 200 lets the 
 
 - [ ] How can we partition our application into sub-applications?
 We can use Express Router to break our api into sub apps.  Depending on what resource the client is after, we can create custom routes for that particular resource depending on the endpoint that is used.
+
+
+
 ## Minimum Viable Product
 
 - [ ] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.

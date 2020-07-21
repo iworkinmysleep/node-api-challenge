@@ -13,6 +13,7 @@ I need this code, but don't know where, perhaps should make some middleware, don
 Go code!
 */
 const express = require('express');
+const cors = require('cors');
 
 const actionsRouter = require('./data/routers/actions-router.js');
 const projectsRouter = require('./data/routers/projects-router.js');
@@ -20,6 +21,7 @@ const projectsRouter = require('./data/routers/projects-router.js');
 const server = express();
 
 server.use(express.json());
+server.use(cors());
 server.use('/api/actions', actionsRouter);
 server.use('/api/projects', projectsRouter);
 
